@@ -60,7 +60,7 @@ export const deleteTask = async(req , res)=>{
     const {id} = req.params;
     try {
         const task = await Taskmanager.findOneAndDelete({id});
-        res.status(500).json({message: "deleted successfully" , task});
+        res.status(200).json({message: "deleted successfully" , task});
     } catch (error) {
         res.status(500).json({
       message: "Internal server error",
@@ -73,7 +73,7 @@ export const getsingletaskbyid = async(req ,res)=>{
     const {id} = req.params;
     try {
         const task = await Taskmanager.findOne({id});
-        res.status(500).json({message: "single task fetch successfully" , task});
+        res.status(200).json({message: "single task fetch successfully" , task});
     } catch (error) {
        res.status(500).json({
       message: "Internal server error",
